@@ -1,0 +1,40 @@
+{
+    "type": "object",
+    "properties": {
+        "apiKey": {
+            "required": true,
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9]{19,50}$"
+        },
+        "competitionId": {
+            "required": true,
+            "type": "string",
+            "pattern": "^(OB_TY\\d{1,7})$"
+        },
+        "fields": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "include": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "exclude": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "culture": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,77 @@
+{
+    "type": "object",
+    "properties": {
+        "apiKey": {
+            "required": true,
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9]{19,50}$"
+        },
+        "classId": {
+            "required": true,
+            "type": "string",
+            "pattern": "^(OB_CL\\d{1,7})$"
+        },
+        "isPublished": {
+            "required": false,
+            "type": "string",
+            "pattern": "(yes|no|all|YES|NO|ALL)",
+            "default": "yes"
+        },
+        "fields": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "include": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "exclude": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "displayed": {
+            "required": false,
+            "type": "string",
+            "pattern": "(yes|no|all|YES|NO|ALL)",
+            "default": "yes"
+        },
+        "channel": {
+            "required": false,
+            "type": "string",
+            "pattern": "^[A-Z]{1}$"
+        },
+        "status": {
+            "required": false,
+            "type": "string",
+            "pattern": "(A|S)"
+        },
+        "sort": {
+            "required": false,
+            "type": "string",
+            "default": "id,asc"
+        },
+        "offset": {
+            "required": false,
+            "type": "integer",
+            "default": 0
+        },
+        "limit": {
+            "required": false,
+            "type": "integer",
+            "default": 100
+        },
+        "culture": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

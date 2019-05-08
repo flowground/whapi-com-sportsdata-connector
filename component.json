@@ -1,0 +1,272 @@
+{
+    "title": "SportsData",
+    "description": "The William Hill SportsData REST API is a collection of GET methods to provide William Hill product data such as sport, competition, event, market and selection data (including prices).",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/whapi.com/sportsdata/2/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://sandbox.whapi.com/v2/sportsdata",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "getCompetitionsForClass": {
+            "main": "./lib/actions/getCompetitionsForClass.js",
+            "title": "Retrieves a list of competitions for a given class id.",
+            "description": "Retrieves a list of competitions for a given class id.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getCompetitionsForClass.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getEventsForClass": {
+            "main": "./lib/actions/getEventsForClass.js",
+            "title": "Retrieves a list of events for a given class id.",
+            "description": "Retrieves a list of events for a given class id. 'includeAllDescendants' parameter should be accompanied with 'date' filter or one of 'dateFrom' and 'dateTo' filters.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getEventsForClass.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getCompetition": {
+            "main": "./lib/actions/getCompetition.js",
+            "title": "Retrieves a specific competition",
+            "description": "Retrieves a specific competition",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getCompetition.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getEventsForCompetition": {
+            "main": "./lib/actions/getEventsForCompetition.js",
+            "title": "Retrieves a list of events for a given competition id.",
+            "description": "Retrieves a list of events for a given competition id. 'headlineSummary' and includeAllDescendants parameters should be accompanied with 'date' filter or one of 'dateFrom' and 'dateTo' filters.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getEventsForCompetition.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMarketGroupsForCompetition": {
+            "main": "./lib/actions/getMarketGroupsForCompetition.js",
+            "title": "Retrieves a list of market groups for a given competition id",
+            "description": "Retrieves a list of market groups for a given competition id",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMarketGroupsForCompetition.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getEvents": {
+            "main": "./lib/actions/getEvents.js",
+            "title": "Retrieves a list of events for the provided IDs.",
+            "description": "Retrieves a list of events for the provided IDs.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getEvents.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getEvent": {
+            "main": "./lib/actions/getEvent.js",
+            "title": "Retrieves a single event by ID.",
+            "description": "Retrieves a single event by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getEvent.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getEventCompetitors": {
+            "main": "./lib/actions/getEventCompetitors.js",
+            "title": "Retrieves competitors for a single event by ID.",
+            "description": "Retrieves competitors for a single event by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getEventCompetitors.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMarkets": {
+            "main": "./lib/actions/getMarkets.js",
+            "title": "Gets one or more specific markets",
+            "description": "Retrieves one or more specific markets. Markets with Live at the end are always In-Play markets. However, not ALL In-Play markets have Live at the end of the market name.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMarkets.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getSelections": {
+            "main": "./lib/actions/getSelections.js",
+            "title": "Gets one or more selections for a market",
+            "description": "Retrieves one or more selections for a market",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSelections.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getSports": {
+            "main": "./lib/actions/getSports.js",
+            "title": "Gets a list of all sports",
+            "description": "Gets a list of all sports",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSports.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getClassesForSport": {
+            "main": "./lib/actions/getClassesForSport.js",
+            "title": "Retrieves a list of classes for a given sport id.",
+            "description": "Retrieves a list of classes for a given sport id.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getClassesForSport.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getCompetitionsForSport": {
+            "main": "./lib/actions/getCompetitionsForSport.js",
+            "title": "Retrieves a list of competitions for a given sport id.",
+            "description": "Retrieves a list of competitions for a given sport id.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getCompetitionsForSport.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getTopBets": {
+            "main": "./lib/actions/getTopBets.js",
+            "title": "Retrieves a weighted list of Selections.",
+            "description": "Retrieves a weighted list of Selections.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getTopBets.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

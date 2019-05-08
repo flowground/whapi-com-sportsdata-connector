@@ -1,0 +1,177 @@
+{
+    "type": "object",
+    "properties": {
+        "apiKey": {
+            "required": true,
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9]{19,50}$"
+        },
+        "competitionId": {
+            "required": true,
+            "type": "string",
+            "pattern": "^(OB_TY\\d{1,7})$"
+        },
+        "isPublished": {
+            "required": false,
+            "type": "string",
+            "pattern": "(yes|no|all|YES|NO|ALL)",
+            "default": "yes"
+        },
+        "fields": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "include": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "exclude": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "displayed": {
+            "required": false,
+            "type": "string",
+            "pattern": "(yes|no|all|YES|NO|ALL)",
+            "default": "yes"
+        },
+        "channel": {
+            "required": false,
+            "type": "string",
+            "pattern": "^[A-Z]{1}$"
+        },
+        "settled": {
+            "required": false,
+            "type": "boolean"
+        },
+        "includeEmpty": {
+            "required": false,
+            "type": "boolean",
+            "default": true
+        },
+        "status": {
+            "required": false,
+            "type": "string",
+            "pattern": "(A|S)"
+        },
+        "sort": {
+            "required": false,
+            "type": "string",
+            "default": "id,asc"
+        },
+        "offset": {
+            "required": false,
+            "type": "integer",
+            "default": 0
+        },
+        "limit": {
+            "required": false,
+            "type": "integer",
+            "default": 100
+        },
+        "headlineSummary": {
+            "required": false,
+            "type": "boolean",
+            "default": false
+        },
+        "includeAllDescendants": {
+            "required": false,
+            "type": "boolean",
+            "default": false
+        },
+        "isInPlay": {
+            "required": false,
+            "type": "boolean"
+        },
+        "marketCount": {
+            "required": false,
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 3,
+            "default": 1
+        },
+        "date": {
+            "required": false,
+            "type": "string",
+            "pattern": "^(\\\\d{4})-(\\\\d{2})-(\\\\d{2})$"
+        },
+        "dateFrom": {
+            "required": false,
+            "type": "string",
+            "pattern": "^(\\\\d{4})-(\\\\d{2})-(\\\\d{2})T(\\\\d{2}):(\\\\d{2}):(\\\\d{2})$"
+        },
+        "dateTo": {
+            "required": false,
+            "type": "string",
+            "pattern": "^(\\\\d{4})-(\\\\d{2})-(\\\\d{2})T(\\\\d{2}):(\\\\d{2}):(\\\\d{2})$"
+        },
+        "marketGroupId": {
+            "required": false,
+            "type": "string"
+        },
+        "eventSort": {
+            "required": false,
+            "type": "string"
+        },
+        "culture": {
+            "required": false,
+            "type": "string"
+        },
+        "marketPublished": {
+            "required": false,
+            "type": "string",
+            "pattern": "(yes|no|all|YES|NO|ALL)",
+            "default": "yes"
+        },
+        "marketStatus": {
+            "required": false,
+            "type": "string",
+            "pattern": "(A|S)"
+        },
+        "marketDisplayed": {
+            "required": false,
+            "type": "string",
+            "pattern": "(yes|no|all|YES|NO|ALL)",
+            "default": "yes"
+        },
+        "marketChannel": {
+            "required": false,
+            "type": "string",
+            "pattern": "^[A-Z]{1}$"
+        },
+        "marketSort": {
+            "required": false,
+            "type": "string"
+        },
+        "marketEW": {
+            "required": false,
+            "type": "string",
+            "pattern": "(yes|no|Yes|No)"
+        },
+        "selectionStatus": {
+            "required": false,
+            "type": "string",
+            "pattern": "(A|S)"
+        },
+        "selectionChannel": {
+            "required": false,
+            "type": "string",
+            "pattern": "^[A-Z]{1}$"
+        },
+        "selectionPublished": {
+            "required": false,
+            "type": "string",
+            "pattern": "(yes|no|all)",
+            "default": "yes"
+        }
+    }
+}

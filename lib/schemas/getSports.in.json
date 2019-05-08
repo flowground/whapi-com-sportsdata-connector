@@ -1,0 +1,56 @@
+{
+    "type": "object",
+    "properties": {
+        "apiKey": {
+            "required": true,
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9]{19,50}$"
+        },
+        "sort": {
+            "required": false,
+            "type": "string",
+            "default": "id,asc"
+        },
+        "offset": {
+            "required": false,
+            "type": "integer",
+            "default": 0
+        },
+        "isPublished": {
+            "required": false,
+            "type": "string",
+            "pattern": "(yes|no|all|YES|NO|ALL)",
+            "default": "yes"
+        },
+        "limit": {
+            "required": false,
+            "type": "integer",
+            "default": 100
+        },
+        "fields": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "include": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "exclude": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "culture": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

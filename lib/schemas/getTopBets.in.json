@@ -1,0 +1,73 @@
+{
+    "type": "object",
+    "properties": {
+        "apiKey": {
+            "required": true,
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9]{19,50}$"
+        },
+        "sportIds": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "pattern": "^(OB_SP\\d+)(,OB_SP\\d+)*$",
+                "type": "string"
+            },
+            "minItems": 1,
+            "maxItems": 10
+        },
+        "competitionIds": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "pattern": "^(OB_TY\\d+)$",
+                "type": "string"
+            },
+            "minItems": 1,
+            "maxItems": 10
+        },
+        "limit": {
+            "required": false,
+            "type": "integer",
+            "default": 100
+        },
+        "fields": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "include": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "exclude": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "param_topBetEventId": {
+            "required": false,
+            "type": "string",
+            "pattern": "^(OB_EV\\d{1,7})$"
+        },
+        "sortName": {
+            "required": false,
+            "type": "string"
+        },
+        "culture": {
+            "required": false,
+            "type": "string"
+        },
+        "Locale": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

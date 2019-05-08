@@ -1,0 +1,117 @@
+{
+    "type": "object",
+    "properties": {
+        "apiKey": {
+            "required": true,
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9]{19,50}$"
+        },
+        "eventId": {
+            "required": true,
+            "type": "string",
+            "pattern": "^(OB_EV\\d{1,7})$"
+        },
+        "includeAllDescendants": {
+            "required": false,
+            "type": "boolean",
+            "default": false
+        },
+        "fields": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "include": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "exclude": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "headlineSummary": {
+            "required": false,
+            "type": "boolean",
+            "default": false
+        },
+        "marketCount": {
+            "required": false,
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 3,
+            "default": 1
+        },
+        "marketIds": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "pattern": "^(OB_MA\\d{1,7})$",
+                "type": "string"
+            }
+        },
+        "includeEmpty": {
+            "required": false,
+            "type": "boolean",
+            "default": true
+        },
+        "culture": {
+            "required": false,
+            "type": "string"
+        },
+        "marketPublished": {
+            "required": false,
+            "type": "string",
+            "pattern": "(yes|no|all|YES|NO|ALL)",
+            "default": "yes"
+        },
+        "marketStatus": {
+            "required": false,
+            "type": "string",
+            "pattern": "(A|S)"
+        },
+        "marketDisplayed": {
+            "required": false,
+            "type": "string",
+            "pattern": "(yes|no|all|YES|NO|ALL)",
+            "default": "yes"
+        },
+        "marketChannel": {
+            "required": false,
+            "type": "string",
+            "pattern": "^[A-Z]{1}$"
+        },
+        "marketSort": {
+            "required": false,
+            "type": "string"
+        },
+        "marketEW": {
+            "required": false,
+            "type": "string",
+            "pattern": "(yes|no|Yes|No)"
+        },
+        "selectionStatus": {
+            "required": false,
+            "type": "string",
+            "pattern": "(A|S)"
+        },
+        "selectionChannel": {
+            "required": false,
+            "type": "string",
+            "pattern": "^[A-Z]{1}$"
+        },
+        "selectionPublished": {
+            "required": false,
+            "type": "string",
+            "pattern": "(yes|no|all)",
+            "default": "yes"
+        }
+    }
+}
